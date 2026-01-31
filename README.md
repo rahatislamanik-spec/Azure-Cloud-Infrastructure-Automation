@@ -43,3 +43,22 @@ The project focuses on deploying, securing, and managing Azure resources using i
 
 This repository is for **portfolio and learning purposes only**.  
 All sensitive information, credentials, and subscription details have been removed.
+
+---
+
+## Screenshots
+
+### Azure Resource Group – Deployed Infrastructure
+![Resource Group Overview](screenshots/01_resource_group_overview.jpg)
+
+### Network Security & Virtual Network Configuration
+![Network and NSG Configuration](screenshots/02_network_nsg_configuration.jpg)
+
+### Azure Key Vault – Secrets Management
+![Key Vault Configuration](screenshots/03_key_vault_configuration.jpg)
+
+### Azure CLI – Infrastructure Deployment Automation
+![CLI Deployment Commands](screenshots/04_cli_deployment_commands.jpg)
+
+### Azure Cost Management / Azure Functions
+![Cost Management or Functions](screenshots/05_cost_management_or_functions.jpg)
