@@ -46,19 +46,29 @@ All sensitive information, credentials, and subscription details have been remov
 
 ---
 
+
+
 ## Screenshots
 
 ### Azure Resource Group – Deployed Infrastructure
-![Resource Group Overview](screenshots/01_resource_group_overview.jpg)
+![Resource Group Overview](screenshots/Resource_Group_Overview.png)
 
-### Network Security & Virtual Network Configuration
-![Network and NSG Configuration](screenshots/02_network_nsg_configuration.jpg)
+---
 
-### Azure Key Vault – Secrets Management
-![Key Vault Configuration](screenshots/03_key_vault_configuration.jpg)
+### Network Security Group – Configuration
+![Network Security Group Overview](screenshots/Network_Security_Group_Overview.png)
 
-### Azure CLI – Infrastructure Deployment Automation
-![CLI Deployment Commands](screenshots/04_cli_deployment_commands.jpg)
+---
 
-### Azure Cost Management / Azure Functions
-![Cost Management or Functions](screenshots/05_cost_management_or_functions.jpg)
+### Azure Function App – Overview
+![Azure Function App Overview](screenshots/Azure_Function_App_Overview.png)
+
+---
+
+### Azure Cloud Shell – CLI Automation
+![Azure Cloud Shell CLI](screenshots/Azure_Cloud_Shell_CLI.png)
+
+---
+
+### ARM Template Deployment – Completed
+![ARM Deployment Complete](screenshots/ARM_Deployment_Complete.png)
