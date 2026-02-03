@@ -78,13 +78,21 @@ All configurations were implemented in a controlled learning environment.
 
 Future enhancements may include additional monitoring alerts, logging integrations, and expanded automation workflows.
 
-### Screenshot Index
+---
 
-| Screenshot | What it Demonstrates |
-|----------|----------------------|
-| ARM_Deployment_Complete.png | Successful ARM template deployment of Azure resources |
-| Resource_Group_Overview.png | Logical grouping of deployed Azure resources |
-| Network_Security_Group_Overview.png | Inbound and outbound security rules using NSGs |
-| Azure_Function_App_Overview.png | Deployed Azure Function and application configuration |
-| Azure_Cloud_Shell_CLI.png | Resource provisioning and management via Azure CLI (Bash) |
+## Screenshot Gallery
 
+### ARM Template Deployment
+![ARM Deployment Complete](screenshots/ARM_Deployment_Complete.png)
+
+### Resource Group Overview
+![Resource Group Overview](screenshots/Resource_Group_Overview.png)
+
+### Network Security Group Rules
+![NSG Overview](screenshots/Network_Security_Group_Overview.png)
+
+### Azure Function Application
+![Azure Function App Overview](screenshots/Azure_Function_App_Overview.png)
+
+### Azure Cloud Shell (CLI)
+![Azure Cloud Shell CLI](screenshots/Azure_Cloud_Shell_CLI.png)
