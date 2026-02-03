@@ -77,3 +77,14 @@ This repository is intended to demonstrate practical cloud infrastructure and op
 All configurations were implemented in a controlled learning environment.
 
 Future enhancements may include additional monitoring alerts, logging integrations, and expanded automation workflows.
+
+### Screenshot Index
+
+| Screenshot | What it Demonstrates |
+|----------|----------------------|
+| ARM_Deployment_Complete.png | Successful ARM template deployment of Azure resources |
+| Resource_Group_Overview.png | Logical grouping of deployed Azure resources |
+| Network_Security_Group_Overview.png | Inbound and outbound security rules using NSGs |
+| Azure_Function_App_Overview.png | Deployed Azure Function and application configuration |
+| Azure_Cloud_Shell_CLI.png | Resource provisioning and management via Azure CLI (Bash) |
+
