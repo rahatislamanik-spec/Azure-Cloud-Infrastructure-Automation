@@ -1,74 +1,79 @@
 # Azure Cloud Infrastructure & Automation
 
-This repository showcases hands-on Azure cloud infrastructure projects completed as part of the **Cloud Computing Technologies (Postgraduate)** program at **George Brown College**.
+This repository showcases hands-on Azure cloud infrastructure and operations work completed as part of the **Cloud Computing Technologies (Postgraduate)** program at **George Brown College**.
 
-The project focuses on deploying, securing, and managing Azure resources using industry best practices such as Infrastructure as Code (IaC), automation, and cost governance.
+The project focuses on designing, securing, operating, and monitoring Azure resources using industry best practices. It combines infrastructure automation with governance, identity and access control, monitoring, and cost management to reflect real-world cloud operations.
 
 ---
 
 ## Project Overview
 
-- Deployed Azure resources using Azure Portal and Azure Cloud Shell (Bash)
-- Implemented Infrastructure as Code using ARM templates
-- Configured secure virtual networking using Network Security Groups (NSGs)
-- Managed secrets and encryption using Azure Key Vault
-- Created and tested Azure Functions
-- Monitored and optimized cloud costs using Azure Cost Management
+This project demonstrates practical experience with Azure infrastructure lifecycle management, including deployment, security, governance, monitoring, and optimization.
+
+Key objectives included:
+- Deploying and managing Azure infrastructure using both the Azure Portal and automation tools
+- Implementing security and access controls aligned with enterprise best practices
+- Monitoring resource health and usage to support reliable operations
+- Applying cost governance to ensure efficient and controlled resource consumption
+
+---
+
+## Infrastructure & Automation
+
+- Deployed Azure resources using **Azure Portal** and **Azure Cloud Shell (Bash)**
+- Implemented **Infrastructure as Code (IaC)** using **ARM templates**
+- Configured secure virtual networking using **Network Security Groups (NSGs)**
+- Deployed and tested **Azure Functions** to support serverless workloads
+
+---
+
+## Operations & Governance
+
+- Implemented **Role-Based Access Control (RBAC)** to securely manage user permissions across Azure subscriptions
+- Configured **Azure Monitor** to track resource health, availability, and operational metrics
+- Applied governance best practices to support secure, auditable cloud operations
+- Monitored and optimized cloud spending using **Azure Cost Management**
+
+---
+
+## Security & Secrets Management
+
+- Implemented secrets management and encryption using **Azure Key Vault**
+- Applied least-privilege access principles to protect sensitive resources
+- Ensured secure handling of credentials and configuration data
 
 ---
 
 ## Technologies & Tools
 
-- Microsoft Azure  
-- Azure CLI & Bash (Cloud Shell)  
-- ARM Templates (IaC)  
-- Azure Functions  
-- Azure Key Vault  
-- Network Security Groups (NSGs)  
-- Azure Cost Management  
+- Microsoft Azure
+- Azure Portal
+- Azure Cloud Shell (Bash)
+- ARM Templates (Infrastructure as Code)
+- Azure Monitor
+- Role-Based Access Control (RBAC)
+- Azure Key Vault
+- Azure Functions
+- Network Security Groups (NSGs)
+- Azure Cost Management
 
 ---
 
-## Skills Demonstrated
+## Screenshots & Documentation
 
-- Cloud infrastructure deployment (IaaS & PaaS)
-- Infrastructure as Code (IaC)
-- Cloud security & secrets management
-- Automation using CLI and scripting
-- Cost monitoring and governance
+The `screenshots/` directory contains **redacted screenshots** demonstrating:
+- Azure resource deployments
+- RBAC role assignments
+- Monitoring dashboards
+- Cost management views
+
+Each screenshot is included for documentation and learning purposes only and does not expose sensitive information.
 
 ---
 
 ## Notes
 
-This repository is for **portfolio and learning purposes only**.  
-All sensitive information, credentials, and subscription details have been removed.
+This repository is intended to demonstrate practical cloud infrastructure and operations skills for **entry-level IT, cloud operations, and application support roles**.  
+All configurations were implemented in a controlled learning environment.
 
----
-
-
-
-## Screenshots
-
-### Azure Resource Group – Deployed Infrastructure
-![Resource Group Overview](screenshots/Resource_Group_Overview.png)
-
----
-
-### Network Security Group – Configuration
-![Network Security Group Overview](screenshots/Network_Security_Group_Overview.png)
-
----
-
-### Azure Function App – Overview
-![Azure Function App Overview](screenshots/Azure_Function_App_Overview.png)
-
----
-
-### Azure Cloud Shell – CLI Automation
-![Azure Cloud Shell CLI](screenshots/Azure_Cloud_Shell_CLI.png)
-
----
-
-### ARM Template Deployment – Completed
-![ARM Deployment Complete](screenshots/ARM_Deployment_Complete.png)
+Future enhancements may include additional monitoring alerts, logging integrations, and expanded automation workflows.
