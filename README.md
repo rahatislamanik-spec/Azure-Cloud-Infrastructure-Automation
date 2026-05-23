@@ -1,98 +1,106 @@
 # Azure Cloud Infrastructure & Automation
 
-This repository showcases hands-on Azure cloud infrastructure and operations work completed as part of the **Cloud Computing Technologies (Postgraduate)** program at **George Brown College**.
+### Deploying, Securing, Governing, and Monitoring Azure Infrastructure End to End
 
-The project focuses on designing, securing, operating, and monitoring Azure resources using industry best practices. It combines infrastructure automation with governance, identity and access control, monitoring, and cost management to reflect real-world cloud operations.
+**Md Rahat Islam Anik · George Brown College · Cloud Computing Technologies (T465) · Postgraduate**
 
----
-
-## Project Overview
-
-This project demonstrates practical experience with Azure infrastructure lifecycle management, including deployment, security, governance, monitoring, and optimization.
-
-Key objectives included:
-- Deploying and managing Azure infrastructure using both the Azure Portal and automation tools
-- Implementing security and access controls aligned with enterprise best practices
-- Monitoring resource health and usage to support reliable operations
-- Applying cost governance to ensure efficient and controlled resource consumption
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-rahatislamanik-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rahatislamanik)
 
 ---
 
-## Infrastructure & Automation
+## Overview
 
-- Deployed Azure resources using **Azure Portal** and **Azure Cloud Shell (Bash)**
-- Implemented **Infrastructure as Code (IaC)** using **ARM templates**
-- Configured secure virtual networking using **Network Security Groups (NSGs)**
-- Deployed and tested **Azure Functions** to support serverless workloads
+This project covers the full Azure infrastructure lifecycle — from initial resource deployment through security hardening, governance, monitoring, and cost control. Every configuration was applied hands-on using the Azure Portal, Azure Cloud Shell, and Infrastructure as Code, reflecting the operational decisions an Azure administrator makes in a real cloud environment.
 
----
-
-## Operations & Governance
-
-- Implemented **Role-Based Access Control (RBAC)** to securely manage user permissions across Azure subscriptions
-- Configured **Azure Monitor** to track resource health, availability, and operational metrics
-- Applied governance best practices to support secure, auditable cloud operations
-- Monitored and optimized cloud spending using **Azure Cost Management**
+The work spans four core domains: infrastructure automation, operations and governance, security and secrets management, and cost visibility. Each area builds on the last — a deployment without governance is ungoverned, governance without monitoring is invisible, and monitoring without cost control is expensive.
 
 ---
 
-## Security & Secrets Management
+## What Was Built
 
-- Implemented secrets management and encryption using **Azure Key Vault**
-- Applied least-privilege access principles to protect sensitive resources
-- Ensured secure handling of credentials and configuration data
+### Infrastructure & Automation
 
----
+**Azure Resource Deployment — Portal and Cloud Shell**
+Resources were deployed using both the Azure Portal for visual configuration and Azure Cloud Shell (Bash) for scripted, repeatable operations — mirroring the dual-mode approach used in enterprise Azure environments where some resources are provisioned interactively and others through pipelines.
 
-## Technologies & Tools
+**Infrastructure as Code — ARM Templates**
+ARM templates were implemented to define and deploy Azure infrastructure declaratively. IaC removes the dependency on manual portal clicks, ensures consistent environments, and creates an auditable deployment record — foundational to any production Azure operation.
 
-- Microsoft Azure
-- Azure Portal
-- Azure Cloud Shell (Bash)
-- ARM Templates (Infrastructure as Code)
-- Azure Monitor
-- Role-Based Access Control (RBAC)
-- Azure Key Vault
-- Azure Functions
-- Network Security Groups (NSGs)
-- Azure Cost Management
+**Virtual Networking — Network Security Groups**
+Secure virtual networking was configured using Network Security Groups (NSGs). Inbound and outbound traffic rules were defined to control resource exposure, restrict access by port and protocol, and enforce network-level segmentation between workloads.
+
+**Serverless — Azure Functions**
+Azure Functions were deployed and tested to support event-driven, serverless workloads — demonstrating the ability to extend cloud infrastructure beyond VMs and containers into lightweight compute that scales automatically.
 
 ---
 
-## Screenshots & Documentation
+### Operations & Governance
 
-The `screenshots/` directory contains **redacted screenshots** demonstrating:
-- Azure resource deployments
+**Role-Based Access Control (RBAC)**
+RBAC was implemented across Azure subscriptions to control who can do what to which resources. Role assignments were scoped at the appropriate level — subscription, resource group, or resource — following least-privilege principles to prevent over-permissioned access.
+
+**Azure Monitor — Resource Health & Metrics**
+Azure Monitor was configured to track resource health, availability, and operational metrics across the deployed environment. Monitoring is the operational layer that makes everything else visible — without it, failures and anomalies go undetected.
+
+**Cost Management — Spending Visibility & Governance**
+Azure Cost Management was used to track and optimize cloud spending across the environment. Cost governance prevents uncontrolled resource sprawl and is a core responsibility for any cloud operations role.
+
+---
+
+### Security & Secrets Management
+
+**Azure Key Vault — Secrets & Encryption**
+Azure Key Vault was implemented to centralize secrets management and encryption key handling. Credentials and configuration data were stored in Key Vault rather than hardcoded in scripts or templates — a non-negotiable security practice in any production Azure environment.
+
+**Least-Privilege Access**
+Least-privilege access principles were applied throughout — RBAC scoped tightly, Key Vault access policies restricted to required identities, and sensitive resources protected from over-exposure. Every permission granted was intentional.
+
+---
+
+## Tech Stack
+
+| Category | Tools & Services |
+|---|---|
+| Cloud Platform | Microsoft Azure |
+| Deployment | Azure Portal · Azure Cloud Shell (Bash) |
+| Infrastructure as Code | ARM Templates |
+| Networking | Virtual Networks · Network Security Groups (NSGs) |
+| Compute | Azure Functions (Serverless) |
+| Identity & Access | Role-Based Access Control (RBAC) |
+| Security | Azure Key Vault · Least-Privilege Access |
+| Monitoring | Azure Monitor |
+| Cost Governance | Azure Cost Management |
+
+---
+
+## Skills Demonstrated
+
+`Azure Resource Deployment` · `ARM Templates` · `Infrastructure as Code` · `Network Security Groups` · `RBAC` · `Azure Key Vault` · `Secrets Management` · `Azure Monitor` · `Azure Functions` · `Cost Management` · `Azure Cloud Shell` · `Least-Privilege Access` · `Cloud Governance`
+
+---
+
+## Screenshots
+
+The `screenshots/` directory contains documented evidence of:
+
+- ARM template deployment and resource provisioning
+- Resource group overview and resource inventory
+- Network Security Group rule configuration
+- Azure Function application deployment
+- Azure Cloud Shell (CLI) operations
 - RBAC role assignments
-- Monitoring dashboards
-- Cost management views
+- Azure Monitor dashboards
+- Cost Management views
 
-Each screenshot is included for documentation and learning purposes only and does not expose sensitive information.
-
----
-
-## Notes
-
-This repository is intended to demonstrate practical cloud infrastructure and operations skills for **entry-level IT, cloud operations, and application support roles**.  
-All configurations were implemented in a controlled learning environment.
-
-Future enhancements may include additional monitoring alerts, logging integrations, and expanded automation workflows.
+All screenshots are included as configuration evidence. No sensitive information is exposed.
 
 ---
 
-## Screenshot Gallery
+## Author
 
-### ARM Template Deployment
-![ARM Deployment Complete](screenshots/ARM_Deployment_Complete.png)
+**Md Rahat Islam Anik**
+Cloud Computing & Network Administration · George Brown College · May 2026
 
-### Resource Group Overview
-![Resource Group Overview](screenshots/Resource_Group_Overview.png)
-
-### Network Security Group Rules
-![NSG Overview](screenshots/Network_Security_Group_Overview.png)
-
-### Azure Function Application
-![Azure Function App Overview](screenshots/Azure_Function_App_Overview.png)
-
-### Azure Cloud Shell (CLI)
-![Azure Cloud Shell CLI](screenshots/Azure_Cloud_Shell_CLI.png)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/rahatislamanik)
+[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=flat&logo=github)](https://github.com/rahatislamanik-spec)
