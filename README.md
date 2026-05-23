@@ -82,18 +82,22 @@ Least-privilege access principles were applied throughout — RBAC scoped tightl
 
 ## Screenshots
 
-The `screenshots/` directory contains documented evidence of:
+Configuration evidence from the live Azure environment — every screenshot documents a real deployment decision.
 
-- ARM template deployment and resource provisioning
-- Resource group overview and resource inventory
-- Network Security Group rule configuration
-- Azure Function application deployment
-- Azure Cloud Shell (CLI) operations
-- RBAC role assignments
-- Azure Monitor dashboards
-- Cost Management views
+### ARM Template Deployment
+![ARM Template Deployment](screenshots/ARM_Deployment_Complete.png)
 
-All screenshots are included as configuration evidence. No sensitive information is exposed.
+### Resource Group Overview
+![Resource Group Overview](screenshots/Resource_Group_Overview.png)
+
+### Network Security Group Rules
+![Network Security Group Overview](screenshots/Network_Security_Group_Overview.png)
+
+### Azure Function Application
+![Azure Function App Overview](screenshots/Azure_Function_App_Overview.png)
+
+### Azure Cloud Shell (CLI)
+![Azure Cloud Shell CLI](screenshots/Azure_Cloud_Shell_CLI.png)
 
 ---
 
