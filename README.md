@@ -4,6 +4,7 @@
 
 **Md Rahat Islam Anik · George Brown College · Cloud Computing Technologies (T465) · Postgraduate**
 
+[![Live Site](https://img.shields.io/badge/Live%20Site-View%20Now-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://rahatislamanik-spec.github.io/azure-cloud-infrastructure-automation/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rahatislamanik-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rahatislamanik)
 

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Azure Cloud Infrastructure & Automation | Md Rahat Islam Anik</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --azure: #0078d4;
+  --azure-light: #50a0e0;
+  --azure-dim: rgba(0,120,212,.15);
+  --bg: #050d1a;
+  --bg2: #091525;
+  --panel: rgba(255,255,255,.04);
+  --border: rgba(0,120,212,.2);
+  --text: #e8f1ff;
+  --muted: rgba(232,241,255,.55);
+  --green: #3dd68c;
+  --gold: #f0b429;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Grid bg */
+body::before {
+  content: '';
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(0,120,212,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,120,212,.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glow orbs */
+.orb { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; }
+.orb-1 { width: 500px; height: 500px; background: rgba(0,120,212,.18); top: -100px; left: -100px; }
+.orb-2 { width: 400px; height: 400px; background: rgba(61,214,140,.10); bottom: 0; right: -80px; }
+
+.wrap { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  background: rgba(5,13,26,.75);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px; max-width: 1000px; margin: 0 auto;
+}
+.nav-brand { font-family: 'Syne', sans-serif; font-size: .85rem; font-weight: 700; color: var(--azure-light); letter-spacing: .04em; }
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .82rem; transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+
+/* HERO */
+.hero { padding: 100px 0 60px; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--azure-dim); border: 1px solid var(--border);
+  padding: 5px 14px; border-radius: 20px;
+  font-family: 'DM Mono', monospace; font-size: .75rem; color: var(--azure-light);
+  margin-bottom: 28px;
+}
+.hero-tag::before { content: ''; width: 7px; height: 7px; background: var(--azure-light); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800; line-height: 1.1; margin-bottom: 20px;
+}
+.hero h1 span { color: var(--azure-light); }
+.hero-sub { color: var(--muted); font-size: 1.05rem; max-width: 600px; margin-bottom: 40px; }
+.hero-stats {
+  display: flex; gap: 32px; flex-wrap: wrap;
+  padding: 20px 28px; background: var(--panel);
+  border: 1px solid var(--border); border-radius: 12px;
+  margin-bottom: 36px;
+}
+.stat { text-align: center; }
+.stat-val { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--azure-light); }
+.stat-lbl { font-size: .72rem; color: var(--muted); letter-spacing: .05em; text-transform: uppercase; }
+.btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  padding: 11px 24px; border-radius: 8px; font-size: .88rem; font-weight: 500;
+  text-decoration: none; transition: all .2s; cursor: pointer; border: none;
+}
+.btn-primary { background: var(--azure); color: #fff; }
+.btn-primary:hover { background: var(--azure-light); }
+.btn-secondary { background: var(--panel); border: 1px solid var(--border); color: var(--text); }
+.btn-secondary:hover { border-color: var(--azure-light); }
+
+/* SECTION */
+section { padding: 64px 0; border-top: 1px solid var(--border); }
+.section-label {
+  font-family: 'DM Mono', monospace; font-size: .72rem;
+  color: var(--azure-light); letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.section-title { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
+.section-sub { color: var(--muted); max-width: 560px; margin-bottom: 40px; }
+
+/* DOMAINS */
+.domains { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.domain-card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 12px; padding: 22px;
+  transition: border-color .25s, transform .25s;
+}
+.domain-card:hover { border-color: var(--azure-light); transform: translateY(-3px); }
+.domain-icon { font-size: 1.6rem; margin-bottom: 12px; }
+.domain-title { font-family: 'Syne', sans-serif; font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+.domain-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; }
+
+/* TECH TABLE */
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tech-row {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px 16px;
+}
+.tech-cat { font-family: 'DM Mono', monospace; font-size: .72rem; color: var(--azure-light); min-width: 120px; padding-top: 2px; }
+.tech-val { font-size: .82rem; color: var(--muted); }
+
+/* SCREENSHOTS */
+.screenshots { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.shot-card {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+  transition: border-color .25s, transform .25s;
+}
+.shot-card:hover { border-color: var(--azure-light); transform: translateY(-3px); }
+.shot-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: var(--bg2); }
+.shot-label { padding: 12px 16px; font-size: .8rem; color: var(--muted); font-family: 'DM Mono', monospace; }
+
+/* SKILLS */
+.skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag {
+  padding: 5px 14px; border-radius: 20px;
+  background: var(--azure-dim); border: 1px solid var(--border);
+  font-size: .78rem; color: var(--azure-light); font-family: 'DM Mono', monospace;
+}
+
+/* PRINCIPLES */
+.principles { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.principle {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; padding: 18px 20px;
+}
+.principle-num { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--azure-light); margin-bottom: 6px; }
+.principle-text { font-size: .85rem; color: var(--muted); line-height: 1.55; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 0; text-align: center;
+  font-size: .8rem; color: var(--muted);
+}
+footer a { color: var(--azure-light); text-decoration: none; }
+
+/* ANIMATIONS */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.fade-in.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">RAHAT ISLAM ANIK · AZURE PORTFOLIO</span>
+    <div class="nav-links">
+      <a href="#domains">Domains</a>
+      <a href="#tech">Stack</a>
+      <a href="#evidence">Evidence</a>
+      <a href="https://linkedin.com/in/rahatislamanik" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero fade-in">
+    <div class="hero-tag">George Brown College · Cloud Computing & Network Administration · 2026</div>
+    <h1>Azure Cloud<br><span>Infrastructure</span><br>&amp; Automation</h1>
+    <p class="hero-sub">End-to-end Azure deployment — from resource provisioning through security hardening, governance, monitoring, and cost control. Every decision applied hands-on in a live Azure environment.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-val">4</div><div class="stat-lbl">Core Domains</div></div>
+      <div class="stat"><div class="stat-val">10+</div><div class="stat-lbl">Azure Services</div></div>
+      <div class="stat"><div class="stat-val">0</div><div class="stat-lbl">Hardcoded Secrets</div></div>
+      <div class="stat"><div class="stat-val">Live</div><div class="stat-lbl">Azure Tenant</div></div>
+    </div>
+    <div class="btn-row">
+      <a href="https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation" target="_blank" class="btn btn-primary">View on GitHub</a>
+      <a href="https://linkedin.com/in/rahatislamanik" target="_blank" class="btn btn-secondary">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- DOMAINS -->
+  <section id="domains">
+    <div class="section-label">What Was Built</div>
+    <div class="section-title">Four Operational Domains</div>
+    <p class="section-sub">Infrastructure is only complete when deployment, governance, security, and cost visibility work together.</p>
+    <div class="domains fade-in">
+      <div class="domain-card">
+        <div class="domain-icon">⚙️</div>
+        <div class="domain-title">Infrastructure & Automation</div>
+        <div class="domain-desc">ARM templates, Azure Cloud Shell scripting, NSGs, and Azure Functions — deployed through both portal and CLI.</div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🏛️</div>
+        <div class="domain-title">Operations & Governance</div>
+        <div class="domain-desc">RBAC with least-privilege scoping at subscription, resource group, and resource level. Azure Monitor for health and metrics visibility.</div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">🔐</div>
+        <div class="domain-title">Security & Secrets</div>
+        <div class="domain-desc">Azure Key Vault for centralized secrets and encryption key management. No credentials hardcoded in scripts or templates.</div>
+      </div>
+      <div class="domain-card">
+        <div class="domain-icon">💰</div>
+        <div class="domain-title">Cost Governance</div>
+        <div class="domain-desc">Azure Cost Management for spending visibility, budget alerts, and resource optimization — preventing uncontrolled sprawl.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section>
+    <div class="section-label">Engineering Approach</div>
+    <div class="section-title">Core Principles Applied</div>
+    <div class="principles fade-in">
+      <div class="principle">
+        <div class="principle-num">01 / INFRASTRUCTURE AS CODE</div>
+        <div class="principle-text">ARM templates define resources declaratively. IaC removes manual portal dependency, ensures consistency, and creates an auditable deployment record.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">02 / ZERO HARDCODED SECRETS</div>
+        <div class="principle-text">All credentials and config data stored in Azure Key Vault. No passwords, keys, or connection strings in scripts, templates, or source code.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">03 / LEAST PRIVILEGE</div>
+        <div class="principle-text">RBAC scoped tightly at the appropriate level. Every permission granted is intentional — no over-permissioned access.</div>
+      </div>
+      <div class="principle">
+        <div class="principle-num">04 / MONITORING FIRST</div>
+        <div class="principle-text">Azure Monitor configured from deployment. Failures and anomalies detected automatically — not discovered after user complaints.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section id="tech">
+    <div class="section-label">Technologies</div>
+    <div class="section-title">Tech Stack</div>
+    <div class="tech-grid fade-in">
+      <div class="tech-row"><span class="tech-cat">Platform</span><span class="tech-val">Microsoft Azure</span></div>
+      <div class="tech-row"><span class="tech-cat">Deployment</span><span class="tech-val">Azure Portal · Azure Cloud Shell (Bash)</span></div>
+      <div class="tech-row"><span class="tech-cat">IaC</span><span class="tech-val">ARM Templates</span></div>
+      <div class="tech-row"><span class="tech-cat">Networking</span><span class="tech-val">Virtual Networks · NSGs</span></div>
+      <div class="tech-row"><span class="tech-cat">Compute</span><span class="tech-val">Azure Functions (Serverless)</span></div>
+      <div class="tech-row"><span class="tech-cat">Identity</span><span class="tech-val">RBAC · Least-Privilege Access</span></div>
+      <div class="tech-row"><span class="tech-cat">Security</span><span class="tech-val">Azure Key Vault</span></div>
+      <div class="tech-row"><span class="tech-cat">Monitoring</span><span class="tech-val">Azure Monitor</span></div>
+      <div class="tech-row"><span class="tech-cat">Cost</span><span class="tech-val">Azure Cost Management</span></div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE -->
+  <section id="evidence">
+    <div class="section-label">Live Evidence</div>
+    <div class="section-title">Deployment Screenshots</div>
+    <p class="section-sub">Every screenshot documents a real deployment decision in a live Azure environment.</p>
+    <div class="screenshots fade-in">
+      <div class="shot-card">
+        <img class="shot-img" src="screenshots/ARM_Deployment_Complete.png" alt="ARM Template Deployment Complete" />
+        <div class="shot-label">ARM Template Deployment Complete</div>
+      </div>
+      <div class="shot-card">
+        <img class="shot-img" src="screenshots/Resource_Group_Overview.png" alt="Resource Group Overview" />
+        <div class="shot-label">Resource Group Overview</div>
+      </div>
+      <div class="shot-card">
+        <img class="shot-img" src="screenshots/Network_Security_Group_Overview.png" alt="Network Security Group Rules" />
+        <div class="shot-label">Network Security Group Rules</div>
+      </div>
+      <div class="shot-card">
+        <img class="shot-img" src="screenshots/Azure_Function_App_Overview.png" alt="Azure Function App" />
+        <div class="shot-label">Azure Function App Overview</div>
+      </div>
+      <div class="shot-card">
+        <img class="shot-img" src="screenshots/Azure_Cloud_Shell_CLI.png" alt="Azure Cloud Shell CLI" />
+        <div class="shot-label">Azure Cloud Shell (Bash CLI)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-label">Skills Demonstrated</div>
+    <div class="section-title">Competencies</div>
+    <div class="skills-wrap fade-in">
+      <span class="skill-tag">Azure Resource Deployment</span>
+      <span class="skill-tag">ARM Templates</span>
+      <span class="skill-tag">Infrastructure as Code</span>
+      <span class="skill-tag">Network Security Groups</span>
+      <span class="skill-tag">RBAC</span>
+      <span class="skill-tag">Azure Key Vault</span>
+      <span class="skill-tag">Secrets Management</span>
+      <span class="skill-tag">Azure Monitor</span>
+      <span class="skill-tag">Azure Functions</span>
+      <span class="skill-tag">Cost Management</span>
+      <span class="skill-tag">Azure Cloud Shell</span>
+      <span class="skill-tag">Least-Privilege Access</span>
+      <span class="skill-tag">Cloud Governance</span>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p><strong>Azure Cloud Infrastructure & Automation</strong> · Md Rahat Islam Anik · George Brown College · 2026</p>
+  <p style="margin-top:8px;">
+    <a href="https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation" target="_blank">GitHub Repository</a>
+    &nbsp;·&nbsp;
+    <a href="https://linkedin.com/in/rahatislamanik" target="_blank">linkedin.com/in/rahatislamanik</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/rahatislamanik-spec" target="_blank">github.com/rahatislamanik-spec</a>
+  </p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
