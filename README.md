@@ -2,19 +2,29 @@
 
 ### Deploying, Securing, Governing, and Monitoring Azure Infrastructure End to End
 
-**Md Rahat Islam Anik · George Brown College · Cloud Computing Technologies (T465) · Postgraduate**
+**Md Rahat Islam Anik · Azure Administrator · Cloud & Infrastructure Operations · 2026**
 
-[![Live Site](https://img.shields.io/badge/Live%20Site-View%20Now-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://rahatislamanik-spec.github.io/azure-cloud-infrastructure-automation/)
+[![Live Site](https://img.shields.io/badge/Live%20Site-View%20Now-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://rahatislamanik-spec.github.io/Azure-Cloud-Infrastructure-Automation/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-rahatislamanik-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rahatislamanik)
 
 ---
 
+## The Problem
+
+An Azure environment deployed without structure becomes ungoverned infrastructure — manual provisioning with no repeatability, credentials hardcoded in scripts, no visibility into costs, no audit trail, and access permissions granted far beyond what any role requires.
+
+## The Solution
+
+A full Azure infrastructure operations framework built end-to-end: ARM templates for repeatable IaC deployments, NSG-enforced network segmentation, Key Vault for centralized secrets management, RBAC scoped to least-privilege at every level, Azure Monitor for operational visibility, and Cost Management for spending governance.
+
+**Every configuration was applied hands-on — no pre-built templates, no guided labs.**
+
+---
+
 ## Overview
 
-This project covers the full Azure infrastructure lifecycle — from initial resource deployment through security hardening, governance, monitoring, and cost control. Every configuration was applied hands-on using the Azure Portal, Azure Cloud Shell, and Infrastructure as Code, reflecting the operational decisions an Azure administrator makes in a real cloud environment.
-
-The work spans four core domains: infrastructure automation, operations and governance, security and secrets management, and cost visibility. Each area builds on the last — a deployment without governance is ungoverned, governance without monitoring is invisible, and monitoring without cost control is expensive.
+This project covers the full Azure infrastructure lifecycle — from initial resource deployment through security hardening, governance, monitoring, and cost control. The work spans four core domains: infrastructure automation, operations and governance, security and secrets management, and cost visibility. Each area builds on the last — a deployment without governance is ungoverned, governance without monitoring is invisible, and monitoring without cost control is expensive.
 
 ---
 
@@ -105,7 +115,7 @@ Configuration evidence from the live Azure environment — every screenshot docu
 ## Author
 
 **Md Rahat Islam Anik**
-Cloud Computing & Network Administration · George Brown College · May 2026
+Azure Administrator · Cloud & Infrastructure Operations Specialist · Toronto, Canada
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/rahatislamanik)
 [![GitHub](https://img.shields.io/badge/GitHub-Portfolio-181717?style=flat&logo=github)](https://github.com/rahatislamanik-spec)
