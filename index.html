@@ -158,6 +158,13 @@ section { padding: 64px 0; border-top: 1px solid var(--border); }
 }
 .principle-num { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--azure-light); margin-bottom: 6px; }
 .principle-text { font-size: .85rem; color: var(--muted); line-height: 1.55; }
+.evidence-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.evidence-item {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 18px;
+}
+.evidence-status { font-family: 'DM Mono', monospace; font-size: .68rem; color: var(--azure-light); margin-bottom: 6px; text-transform: uppercase; }
+.evidence-text { font-size: .82rem; color: var(--muted); line-height: 1.55; }
 
 /* FOOTER */
 footer {
@@ -184,7 +191,7 @@ footer a { color: var(--azure-light); text-decoration: none; }
       <a href="#domains">Domains</a>
       <a href="#tech">Stack</a>
       <a href="#evidence">Evidence</a>
-      <a href="https://linkedin.com/in/rahatislamanik" target="_blank">LinkedIn</a>
+      <a href="https://linkedin.com/in/rahatislamanik" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
 </nav>
@@ -195,16 +202,16 @@ footer a { color: var(--azure-light); text-decoration: none; }
   <div class="hero fade-in">
     <div class="hero-tag">Azure Administrator Portfolio · Cloud Infrastructure Operations · 2026</div>
     <h1>Azure Cloud<br><span>Infrastructure</span><br>&amp; Automation</h1>
-    <p class="hero-sub">End-to-end Azure deployment — from resource provisioning through security hardening, governance, monitoring, and cost control. Every decision applied hands-on in a live Azure environment.</p>
+    <p class="hero-sub">Azure lab-based operations case study covering resource deployment, ARM deployment review, NSG validation, Azure Function review, and Cloud Shell inspection in a temporary Azure tenant.</p>
     <div class="hero-stats">
       <div class="stat"><div class="stat-val">4</div><div class="stat-lbl">Core Domains</div></div>
       <div class="stat"><div class="stat-val">10+</div><div class="stat-lbl">Azure Services</div></div>
-      <div class="stat"><div class="stat-val">0</div><div class="stat-lbl">Hardcoded Secrets</div></div>
-      <div class="stat"><div class="stat-val">Live</div><div class="stat-lbl">Azure Tenant</div></div>
+      <div class="stat"><div class="stat-val">5</div><div class="stat-lbl">Evidence Screenshots</div></div>
+      <div class="stat"><div class="stat-val">Lab</div><div class="stat-lbl">Azure Tenant</div></div>
     </div>
     <div class="btn-row">
-      <a href="https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation" target="_blank" class="btn btn-primary">View on GitHub</a>
-      <a href="https://linkedin.com/in/rahatislamanik" target="_blank" class="btn btn-secondary">LinkedIn</a>
+      <a href="https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub</a>
+      <a href="https://linkedin.com/in/rahatislamanik" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
     </div>
   </div>
 
@@ -212,7 +219,7 @@ footer a { color: var(--azure-light); text-decoration: none; }
   <section id="domains">
     <div class="section-label">What Was Built</div>
     <div class="section-title">Four Operational Domains</div>
-    <p class="section-sub">Infrastructure is only complete when deployment, governance, security, and cost visibility work together.</p>
+    <p class="section-sub">The current evidence focuses on deployment, network security group review, serverless resource review, and command-line inspection. Governance and security controls are documented as production considerations where screenshots are not yet included.</p>
     <div class="domains fade-in">
       <div class="domain-card">
         <div class="domain-icon">⚙️</div>
@@ -222,17 +229,17 @@ footer a { color: var(--azure-light); text-decoration: none; }
       <div class="domain-card">
         <div class="domain-icon">🏛️</div>
         <div class="domain-title">Operations & Governance</div>
-        <div class="domain-desc">RBAC with least-privilege scoping at subscription, resource group, and resource level. Azure Monitor for health and metrics visibility.</div>
+        <div class="domain-desc">RBAC and Azure Monitor are documented as production operations requirements. Additional role assignment and monitoring screenshots would strengthen this section.</div>
       </div>
       <div class="domain-card">
         <div class="domain-icon">🔐</div>
         <div class="domain-title">Security & Secrets</div>
-        <div class="domain-desc">Azure Key Vault for centralized secrets and encryption key management. No credentials hardcoded in scripts or templates.</div>
+        <div class="domain-desc">Azure Key Vault is documented as the recommended secrets-management pattern. Key Vault screenshots or source artifacts are a future evidence improvement.</div>
       </div>
       <div class="domain-card">
         <div class="domain-icon">💰</div>
         <div class="domain-title">Cost Governance</div>
-        <div class="domain-desc">Azure Cost Management for spending visibility, budget alerts, and resource optimization — preventing uncontrolled sprawl.</div>
+        <div class="domain-desc">Cost Management is documented as a production governance requirement. Cost dashboard screenshots are not currently included.</div>
       </div>
     </div>
   </section>
@@ -247,17 +254,29 @@ footer a { color: var(--azure-light); text-decoration: none; }
         <div class="principle-text">ARM templates define resources declaratively. IaC removes manual portal dependency, ensures consistency, and creates an auditable deployment record.</div>
       </div>
       <div class="principle">
-        <div class="principle-num">02 / ZERO HARDCODED SECRETS</div>
-        <div class="principle-text">All credentials and config data stored in Azure Key Vault. No passwords, keys, or connection strings in scripts, templates, or source code.</div>
+        <div class="principle-num">02 / SECRETS MANAGEMENT TARGET</div>
+        <div class="principle-text">Production Azure deployments should avoid passwords, keys, or connection strings in scripts and templates. Key Vault evidence is a recommended future addition.</div>
       </div>
       <div class="principle">
         <div class="principle-num">03 / LEAST PRIVILEGE</div>
-        <div class="principle-text">RBAC scoped tightly at the appropriate level. Every permission granted is intentional — no over-permissioned access.</div>
+        <div class="principle-text">RBAC should be scoped tightly at the appropriate level. This repo discusses least privilege, but does not currently include role assignment screenshots.</div>
       </div>
       <div class="principle">
-        <div class="principle-num">04 / MONITORING FIRST</div>
-        <div class="principle-text">Azure Monitor configured from deployment. Failures and anomalies detected automatically — not discovered after user complaints.</div>
+        <div class="principle-num">04 / MONITORING REQUIREMENT</div>
+        <div class="principle-text">Azure Monitor should be configured early in production environments. Monitoring screenshots are a future validation item for this repo.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE STATUS -->
+  <section>
+    <div class="section-label">Evidence Boundary</div>
+    <div class="section-title">What Is Proven vs. Discussed</div>
+    <div class="evidence-list fade-in">
+      <div class="evidence-item"><div class="evidence-status">Evidenced</div><div class="evidence-text">ARM deployment completion, resource group review, Azure Function overview, and Cloud Shell output.</div></div>
+      <div class="evidence-item"><div class="evidence-status">Partially Evidenced</div><div class="evidence-text">Network Security Group creation/review and default rule visibility.</div></div>
+      <div class="evidence-item"><div class="evidence-status">Discussed</div><div class="evidence-text">RBAC, Key Vault, Azure Monitor, and Cost Management as production requirements.</div></div>
+      <div class="evidence-item"><div class="evidence-status">Not Claimed</div><div class="evidence-text">Production deployment, complete governance rollout, or included ARM/template source code.</div></div>
     </div>
   </section>
 
@@ -280,9 +299,9 @@ footer a { color: var(--azure-light); text-decoration: none; }
 
   <!-- EVIDENCE -->
   <section id="evidence">
-    <div class="section-label">Live Evidence</div>
+    <div class="section-label">Lab Evidence</div>
     <div class="section-title">Deployment Screenshots</div>
-    <p class="section-sub">Every screenshot documents a real deployment decision in a live Azure environment.</p>
+    <p class="section-sub">Screenshots document selected Azure lab configuration steps and outcomes.</p>
     <div class="screenshots fade-in">
       <div class="shot-card">
         <img class="shot-img" src="screenshots/ARM_Deployment_Complete.png" alt="ARM Template Deployment Complete" />
@@ -333,11 +352,11 @@ footer a { color: var(--azure-light); text-decoration: none; }
 <footer>
   <p><strong>Azure Cloud Infrastructure & Automation</strong> · Md Rahat Islam Anik · Cloud Infrastructure Portfolio · 2026</p>
   <p style="margin-top:8px;">
-    <a href="https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation" target="_blank">GitHub Repository</a>
+    <a href="https://github.com/rahatislamanik-spec/azure-cloud-infrastructure-automation" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
     &nbsp;·&nbsp;
-    <a href="https://linkedin.com/in/rahatislamanik" target="_blank">linkedin.com/in/rahatislamanik</a>
+    <a href="https://linkedin.com/in/rahatislamanik" target="_blank" rel="noopener noreferrer">linkedin.com/in/rahatislamanik</a>
     &nbsp;·&nbsp;
-    <a href="https://github.com/rahatislamanik-spec" target="_blank">github.com/rahatislamanik-spec</a>
+    <a href="https://github.com/rahatislamanik-spec" target="_blank" rel="noopener noreferrer">github.com/rahatislamanik-spec</a>
   </p>
 </footer>
 
