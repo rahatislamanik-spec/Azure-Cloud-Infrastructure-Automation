@@ -119,6 +119,8 @@ Least-privilege access is documented as the target security principle. Additiona
 
 Configuration evidence from the temporary Azure lab environment.
 
+For a screenshot-by-screenshot evidence summary, see [docs/evidence-map.md](docs/evidence-map.md).
+
 ### ARM Template Deployment
 ![ARM Template Deployment](screenshots/ARM_Deployment_Complete.png)
 
