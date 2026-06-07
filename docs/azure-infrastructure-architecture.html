@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Infrastructure Operations Architecture</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { min-height: 100vh; padding: 32px; background: #eef3f8; color: #172033; font-family: "Segoe UI", Calibri, Arial, sans-serif; }
+        .container { max-width: 1160px; margin: 0 auto; padding: 34px; background: #fff; border: 1px solid #d5deea; border-radius: 10px; box-shadow: 0 16px 42px rgba(23,32,51,.12); }
+        .back-link { display: inline-block; margin-bottom: 22px; color: #2563a6; font-size: 14px; font-weight: 700; text-decoration: none; }
+        header { margin-bottom: 28px; text-align: center; }
+        h1 { margin-bottom: 10px; font-size: 30px; line-height: 1.2; }
+        .subtitle { color: #53647c; line-height: 1.5; }
+        .note { max-width: 860px; margin: 18px auto 0; padding: 14px 16px; background: #f7faff; border: 1px solid #d5deea; border-left: 4px solid #2563a6; border-radius: 6px; color: #36455c; font-size: 14px; line-height: 1.5; text-align: left; }
+        .grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin-top: 26px; }
+        .zone { padding: 18px; background: #f8fbff; border: 1px solid #cbd7e7; border-radius: 8px; }
+        .zone h2 { margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid #2563a6; font-size: 17px; }
+        .node { margin-bottom: 12px; padding: 14px; background: #fff; border: 2px solid #6f8fc0; border-radius: 8px; box-shadow: 0 3px 10px rgba(37,99,166,.12); text-align: center; font-weight: 700; line-height: 1.35; }
+        .node small { display: block; margin-top: 5px; color: #53647c; font-size: 12px; font-weight: 500; }
+        .node.evidenced { background: #f1fbf8; border-color: #3d9987; }
+        .node.partial { background: #fff9e8; border-color: #d5a51d; }
+        .node.future { background: #fff5f4; border-color: #d66a52; }
+        .legend { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 24px; padding: 18px; background: #172033; border-radius: 8px; color: #fff; }
+        .legend div { text-align: center; font-size: 13px; line-height: 1.4; }
+        .legend strong { display: block; margin-bottom: 4px; font-size: 15px; }
+        @media (max-width: 900px) { .grid, .legend { grid-template-columns: 1fr; } body { padding: 18px; } .container { padding: 24px; } h1 { font-size: 24px; } }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <a class="back-link" href="../README.md">Back to Azure Cloud Infrastructure Automation</a>
+        <header>
+            <h1>Azure Infrastructure Operations Architecture</h1>
+            <p class="subtitle">Lab evidence view across deployment, resource review, network security, serverless compute, and governance roadmap</p>
+            <p class="note">This diagram separates evidenced lab work from discussed production governance patterns. It should not be read as proof of a complete production Azure landing zone.</p>
+        </header>
+
+        <section class="grid" aria-label="Azure infrastructure architecture">
+            <section class="zone">
+                <h2>Evidenced Lab Components</h2>
+                <div class="node evidenced">Resource Group Review<small>Resource inventory and portal overview screenshot</small></div>
+                <div class="node evidenced">ARM Deployment Evidence<small>Deployment completion screenshot</small></div>
+                <div class="node evidenced">Azure Cloud Shell<small>CLI inspection evidence</small></div>
+            </section>
+            <section class="zone">
+                <h2>Infrastructure Services</h2>
+                <div class="node partial">Network Security Group<small>NSG overview/default rule visibility; custom hardening not fully evidenced</small></div>
+                <div class="node evidenced">Azure Function App<small>Serverless resource review screenshot</small></div>
+                <div class="node partial">ARM / IaC Pattern<small>Deployment evidence shown; source template not retained</small></div>
+            </section>
+            <section class="zone">
+                <h2>Production Governance Roadmap</h2>
+                <div class="node future">RBAC Assignments<small>Discussed; additional role evidence needed</small></div>
+                <div class="node future">Key Vault<small>Recommended secrets pattern; not evidenced</small></div>
+                <div class="node future">Azure Monitor / Cost Management<small>Recommended operations layer; not evidenced</small></div>
+            </section>
+        </section>
+
+        <section class="legend" aria-label="Evidence legend">
+            <div><strong>Green</strong>Evidenced in current screenshot set.</div>
+            <div><strong>Yellow</strong>Partially evidenced or conceptually discussed.</div>
+            <div><strong>Red</strong>Production roadmap item, not proven in this repo.</div>
+        </section>
+    </main>
+</body>
+</html>

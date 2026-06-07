@@ -32,6 +32,8 @@ A production-style Azure operations workflow documented from lab evidence: ARM d
 
 This project covers selected Azure infrastructure operations activities — resource deployment, network security group review, serverless resource review, and Cloud Shell inspection. It also discusses governance, monitoring, secrets management, and cost control as important production considerations, but those areas are not fully evidenced in the current screenshot set.
 
+For a visual summary that separates evidenced lab work from future governance patterns, see the [Azure infrastructure architecture diagram](docs/azure-infrastructure-architecture.html).
+
 ---
 
 ## What Was Built
