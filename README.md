@@ -90,12 +90,38 @@ Least-privilege access is documented as the target security principle. Additiona
 | Network Security Group | Partially evidenced | NSG overview/default rules screenshot |
 | Azure Function App | Evidenced | Function App overview screenshot |
 | Azure Cloud Shell | Evidenced | Cloud Shell command output screenshot |
-| ARM template source | Not included | Future improvement |
+| ARM template source | Included | [templates/nsg-rules.json](templates/nsg-rules.json) |
 | RBAC assignments | Discussed, not evidenced | Future improvement |
 | Azure Key Vault | Discussed, not evidenced | Future improvement |
 | Azure Monitor | Discussed, not evidenced | Future improvement |
 | Cost Management | Discussed, not evidenced | Future improvement |
 | Production deployment | Not claimed | Temporary Azure lab environment |
+
+---
+
+## Deployment Artifacts
+
+| Artifact | Purpose |
+|---|---|
+| [deploy/deploy-infrastructure.sh](deploy/deploy-infrastructure.sh) | Full Azure CLI deployment — VNet, NSG, Function App, Key Vault, RBAC, Budget |
+| [templates/nsg-rules.json](templates/nsg-rules.json) | ARM template — NSG with HTTPS allow, AzureCloud service tag, explicit deny-all |
+| [DESIGN-DECISIONS.md](DESIGN-DECISIONS.md) | Architectural rationale — ARM vs Bicep, NSG vs Firewall, Key Vault RBAC design |
+
+```bash
+# Deploy full infrastructure
+az login
+chmod +x deploy/deploy-infrastructure.sh
+./deploy/deploy-infrastructure.sh
+
+# Or deploy NSG via ARM template
+az deployment group create \
+  --resource-group AzureInfra-RG \
+  --template-file templates/nsg-rules.json \
+  --parameters nsgName=AzureInfra-NSG environment=Lab
+
+# Cleanup after lab
+az group delete --name AzureInfra-RG --yes --no-wait
+```
 
 ---
 
