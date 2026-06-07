@@ -36,7 +36,7 @@ This project covers selected Azure infrastructure operations activities — reso
 
 This visual summary separates evidenced lab work from partial evidence and future governance patterns.
 
-[View interactive HTML version](docs/azure-infrastructure-architecture.html)
+[View interactive HTML version](https://rahatislamanik-spec.github.io/Azure-Cloud-Infrastructure-Automation/docs/azure-infrastructure-architecture.html)
 
 ---
 
